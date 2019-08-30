@@ -1,0 +1,5 @@
+function last_two_dirs {
+pwd |rev| awk -F / '{print $1,$2}' | rev | sed s_\ _/_
+}
+
+export PS1="\[\033[0;32m\]\u@\h:\[\033[33m\]\$(last_two_dirs)\[\033[0m\]\$ ";
